@@ -2,13 +2,15 @@
 
 Name: icon-slicer
 Version: 0.3
-Release: %mkrel 1
+Release: %mkrel 2
 Summary: Utility for icon theme generation
 License: MIT
 Group: Development/Other
 Url: http://www.freedesktop.org/software/icon-slicer/
 
 Source: http://www.freedesktop.org/software/icon-slicer/releases/icon-slicer-0.3.tar.gz
+
+Patch: icon-slicer-0.3-sugar-297.patch
 
 BuildRequires: pkgconfig
 BuildRequires: xcursorgen
@@ -22,6 +24,7 @@ Utility for generating icon themes and libXcursor cursor themes.
 
 %prep
 %setup -q
+%patch -p1
 
 %build
 %configure
