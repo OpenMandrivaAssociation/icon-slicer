@@ -12,18 +12,18 @@ Source: http://www.freedesktop.org/software/icon-slicer/releases/icon-slicer-0.3
 
 Patch: icon-slicer-0.3-sugar-297.patch
 
-BuildRequires: pkgconfig
-BuildRequires: xcursorgen
-BuildRequires: libgtk+2-devel
-BuildRequires: libpopt-devel
+BuildRequires: gtk+2-devel  
+BuildRequires: pkgconfig  
+BuildRequires: libpopt-devel  
 
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
+
 
 %description
 Utility for generating icon themes and libXcursor cursor themes.
 
 %prep
-%setup -q
+%setup -q -n icon-slicer-0.3
 %patch -p1
 
 %build
@@ -34,10 +34,11 @@ make
 rm -rf %{buildroot}
 make DESTDIR=%{buildroot} install
 
+
 %clean
 rm -rf %{buildroot}
 
-%files
+%files 
 %defattr(-,root,root,-)
 %{_bindir}/%{name}
 %doc AUTHORS ChangeLog README TODO
