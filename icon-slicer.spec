@@ -27,6 +27,7 @@ Utility for generating icon themes and libXcursor cursor themes.
 %patch -p1
 
 %build
+%define __libtoolize true
 %configure
 make
 
