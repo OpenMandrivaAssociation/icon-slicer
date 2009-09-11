@@ -2,7 +2,7 @@
 
 Name: icon-slicer
 Version: 0.3
-Release: %mkrel 2
+Release: %mkrel 3
 Summary: Utility for icon theme generation
 License: MIT
 Group: Development/Other
