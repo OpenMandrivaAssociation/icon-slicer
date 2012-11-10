@@ -1,0 +1,65 @@
+--- icon-slicer-0.3/src/main.c.orig	2003-06-25 20:17:32.000000000 +0000
++++ icon-slicer-0.3/src/main.c	2009-03-20 17:49:03.000000000 +0000
+@@ -89,7 +89,7 @@
+ {
+   ThemeImage *image = theme_source_find_image (source, frame_index);
+   int start_x, start_y;
+-  int i, j;
++  int x, y;
+   
+   const guchar *pixels;
+   int rowstride;
+@@ -103,7 +103,7 @@
+   if (n_channels == 3)
+     {
+       out->x = start_x;
+-      out->y = start_x;
++      out->y = start_y;
+       out->width = source->gridsize;
+       out->height = source->gridsize;
+       
+@@ -116,29 +116,29 @@
+       
+       pixels = gdk_pixbuf_get_pixels (image->image) + start_y * rowstride + start_x * 4;
+ 
+-      for (j = 0; j < source->gridsize; j++)
++      for (y = 0; y < source->gridsize; y++)
+ 	{
+-	  for (i = 0; i < source->gridsize; i++)
++	  for (x = 0; x < source->gridsize; x++)
+ 	    {
+-	      if (pixels[4*i + 3] > threshold)
++	      if (pixels[4*x + 3] > threshold)
+ 		{
+ 		  if (found)
+ 		    {
+-		      if (start_x + i < min_x)
+-			min_x = start_x + i;
+-		      if (start_x + i >= max_x)
+-			max_x = start_x + i + 1;
+-		      if (start_y + j < min_y)
+-			min_y = start_y + j;
+-		      if (start_y + j >= max_y)
+-			max_y = start_y + j + 1;
++		      if (start_x + x < min_x)
++			min_x = start_x + x;
++		      if (start_x + x >= max_x)
++			max_x = start_x + x + 1;
++		      if (start_y + y < min_y)
++			min_y = start_y + y;
++		      if (start_y + y >= max_y)
++			max_y = start_y + y + 1;
+ 		    }
+ 		  else
+ 		    {
+-		      min_x = start_x + i;
+-		      max_x = start_x + i + 1;
+-		      min_y = start_y + i;
+-		      max_y = start_y + i + 1;
++		      min_x = start_x + x;
++		      max_x = start_x + x + 1;
++		      min_y = start_y + y;
++		      max_y = start_y + y + 1;
+ 
+ 		      found = TRUE;
+ 		    }
