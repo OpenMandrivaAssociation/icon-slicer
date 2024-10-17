@@ -7,7 +7,7 @@ Release:	6
 Summary:	Utility for icon theme generation
 License:	MIT
 Group:		Development/Other
-Url:		http://www.freedesktop.org/software/icon-slicer/
+Url:		https://www.freedesktop.org/software/icon-slicer/
 
 Source:		http://www.freedesktop.org/software/icon-slicer/releases/icon-slicer-0.3.tar.gz
 
