@@ -13,6 +13,11 @@ Source:		http://www.freedesktop.org/software/icon-slicer/releases/icon-slicer-0.
 
 Patch:		icon-slicer-0.3-sugar-297.patch
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	pkgconfig(gtk+-2.0)
 BuildRequires:	pkgconfig(popt)
 
